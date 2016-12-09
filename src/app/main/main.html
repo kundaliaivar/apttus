@@ -1,0 +1,56 @@
+<header>Apttus Task Management</header>
+<div class="container">
+    <form ng-submit="main.addTask(main.taskName,main.taskDate,main.priority)">
+        <div class="form-fields">
+            <label for="task">Task Detail</label>
+            <input type="text" name="task" placeholder="task detail" id="task" ng-model="main.taskName">
+        </div>
+        <div class="row">
+            <div ng-repeat="val in main.val" class="col-sm-3">
+                <label for="{{val}}">{{val}}</label>
+                <input type="radio" name="priority" id="{{val}}" ng-model="main.priority" value="{{val}}">
+            </div>
+            <div class="col-sm-3">
+                <input type="date" name="datepicker" ng-model="main.taskDate">
+            </div>
+        </div>
+        <div class="button-wrap">
+            <button>Add Task</button>
+        </div>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Task Name</td>
+                <td ng-click="main.sortType = 'complexity'; main.sortReverse = !main.sortReverse">
+                    Priority
+                    <span ng-show="main.sortType == 'complexity' && !main.sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="main.sortType == 'complexity' && main.sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td ng-click="main.sortType = 'date'; main.sortReverse = !main.sortReverse">
+                    Date
+                    <span ng-show="main.sortType == 'date' && !main.sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="main.sortType == 'date' && main.sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>Completed?</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="obj in main.tasks | orderBy:main.sortType:main.sortReverse track by $index" ng-class="{'strike': obj.checked }">
+                <td>{{obj.taskname}}</td>
+                <td>{{obj.complexity}}</td>
+                <td>{{obj.date}}</td>
+                <td>
+                    <input type="checkbox" name="completedYes" ng-model="obj.checked">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<header>Apttus Profile Directive</header>
+<div class="container directive-poc">
+    <input type="text" name="profile" ng-model="main.profileInfo" placeholder="Enter your github ID">
+    <br>
+    <button ng-click="main.profileobj.getProfileData(main.profileInfo)">Get Profile</button>
+    <git-profile profile-data="main.profileobj"></git-profile>
+</div>

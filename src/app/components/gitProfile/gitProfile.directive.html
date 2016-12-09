@@ -1,0 +1,9 @@
+<div>
+    <img ng-src="{{profile.data.avatar_url}}" width="200">
+</div>
+<div>
+    {{profile.data.name}}
+</div>
+<div ng-if="profile.data.avatar_url">
+    Followers<span>{{profile.data.followers}}</span>&nbsp; Following<span>{{profile.data.following}}</span>
+</div>

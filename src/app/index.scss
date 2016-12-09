@@ -1,0 +1,77 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+header{
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	font-size: 30px;
+	border-top: 2px solid #61a60e;
+	border-bottom: 2px solid #61a60e;
+	color: #61a60e
+}
+.container{
+	max-width: 600px;
+	margin-bottom: 40px;
+}
+.form-fields{
+	margin: 40px 0 0 0;
+}
+.radio-buttons{
+	float: left;
+	margin-right: 10px;
+}
+.row{
+	margin-top: 10px;
+}
+.strike{
+	text-decoration: line-through;
+}
+.button-wrap{
+	text-align: center;
+    margin-top: 20px;
+}
+button{
+	background: #ff9f19;
+	line-height: 40px;
+	padding: 0 20px;
+	color: #fff;
+	border: 0;
+}
+table{
+	border: 1px solid #bbb;
+    margin-top: 20px;
+    width: 100%;
+}
+tbody tr:nth-child(odd){
+	background: #ccc;
+}
+td{
+	line-height: 30px;
+    padding: 0 10px;
+}
+.directive-poc{
+	text-align: center;
+}
+input[name="profile"]{
+	margin: 30px 0 10px;
+}
+img{
+	margin-top: 10px;
+}
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
