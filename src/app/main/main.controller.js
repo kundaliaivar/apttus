@@ -6,7 +6,7 @@
         .controller( 'MainController', MainController );
 
     /** @ngInject */
-    function MainController( $timeout, dataCache, toastr ) {
+    function MainController( $timeout, dataCache ) {
         this.profileobj = {};
         this.sortType = 'complexity'; // set the default sort type
         this.sortReverse = false;

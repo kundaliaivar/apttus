@@ -1,7 +1,7 @@
-(function() {
-  'use strict';
+( function() {
+    'use strict';
 
-  angular
-    .module('apttusDemo', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngMessages', 'ngAria', 'ui.router', 'toastr']);
+    angular
+        .module( 'apttusDemo', [ 'ngAnimate', 'ngCookies', 'ngTouch', 'ngMessages', 'ui.router' ] );
 
-})();
+} )();
